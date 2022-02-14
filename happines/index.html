@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/swiper.css">
+    <link rel="stylesheet" href="dist/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="dist/js/swiper.js"></script>
+    <script src="dist/swiper.animate1.0.3.min.js"></script>
+    <script src="dist/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <audio src="yuanxiao.mp3" autoplay loop></audio>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide page">
+                <img class="yanhua  ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="4s"
+                    swiper-animate-delay="3s" src="image/yanhua.gif" alt="">
+                <img class="yanhuashiti" src="image/yanhua.png" alt="">
+                <img class="huomiao  ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s"
+                    src="image/huomiao.gif" alt="">
+            </div>
+            <div class="swiper-slide page">
+                <div class="text_container ani" swiper-animate-effect="shake" swiper-animate-duration="1s"
+                    swiper-animate-delay="4s">
+                    <p class="text yao dengmi_text  ani" swiper-animate-effect="zoomInLeft"
+                        swiper-animate-duration="1s">摇</p>
+                    <p class="text yi dengmi_text  ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="1s"
+                        swiper-animate-delay="1s">一</p>
+                    <p class="text yao2 dengmi_text  ani" swiper-animate-effect="zoomInLeft"
+                        swiper-animate-duration="1s">摇</p>
+                    <p class="text cai dengmi_text  ani" swiper-animate-effect="zoomInRight"
+                        swiper-animate-duration="1s" swiper-animate-delay="1s">猜</p>
+                    <p class="text deng dengmi_text  ani" swiper-animate-effect="zoomInLeft"
+                        swiper-animate-duration="1s">灯</p>
+                    <p class="text mi dengmi_text  ani" swiper-animate-effect="zoomInRight" swiper-animate-duration="1s"
+                        swiper-animate-delay="1s">谜</p>
+                </div>
+            </div>
+            <div class="swiper-slide page">
+                <h1 class="dengmi_title">摇一摇出灯谜</h1>
+                <div class="mi_mian">
+                    <p class="title"></p>
+                    <p class="result"></p>
+                </div>
+            </div>
+            <div class="swiper-slide page">
+                <img class="page4 yan ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s"
+                    swiper-animate-delay="1s" src="image/yan.png" alt="">
+                <img class="page4 tangyuan  ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s"
+                    src="image/tangyuan.png" alt="">
+                <span class="text yuan ani" swiper-animate-effect="bounceIn" swiper-animate-duration="2s"
+                    swiper-animate-delay="0.5s">元</span>
+                <span class="text xiao ani" swiper-animate-effect="bounceIn" swiper-animate-duration="2s"
+                    swiper-animate-delay="0.6s">宵</span>
+                <span class="text kuai ani" swiper-animate-effect="bounceIn" swiper-animate-duration="2s"
+                    swiper-animate-delay="0.7s">快</span>
+                <span class="text le ani" swiper-animate-effect="bounceIn" swiper-animate-duration="2s"
+                    swiper-animate-delay="0.8s">乐</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="up">∧</p>
+    <script>
+        new Swiper(".swiper-container", {
+            direction: "vertical",
+            mousewheel: true,
+            on: {
+                init: function () {
+                    swiperAnimateCache(this);
+                    swiperAnimate(this);
+                },
+                slideChangeTransitionEnd: function () {
+                    swiperAnimate(this);
+                }
+            }
+        });
+
+        function addShake(callback) {
+            function shake(event) {
+                var x = event.acceleration.x;
+
+                //区分 是否是摇一摇之后的状态
+                var isShake = false;
+
+                //数值可以控制摇一摇的敏感度
+                if (x > 30 || x < -30) {
+                    //只要进入这个判断 就是 手机要动过一次
+                    //更改 isShake的值 标示为 已经摇过
+                    isShake = true;
+                    callback();
+                }
+                //如果 已经摇一摇 过
+                //设置隔几秒后 才可以继续摇
+                if (isShake === true) {
+                    //移除陀螺仪的监听事件 更新是否摇一摇变量的值
+                    isShake = false;
+                    //移除 监听陀螺仪的事件
+                    window.removeEventListener("devicemotion", shake);
+                    //    3秒后 才可以继续使用摇一摇
+                    setTimeout(function () {
+                        window.addEventListener("devicemotion", shake);
+                    }, 5000);
+                }
+
+            }
+            window.addEventListener("devicemotion", shake);
+        }
+
+        var result = $(".result");
+        $(".title").dblclick(function () {
+            var dis = result.css("display");
+            result.css("display", dis === "block" ? "none" : "block");
+        });
+
+        addShake(function () {
+
+            $.get("http://route.showapi.com/151-2?showapi_appid=54109&showapi_sign=cf732a8ea1254fe7b3818e2d2edcaf49",
+                function (data) {
+                    var list = JSON.parse(data).showapi_res_body.pagebean.contentlist;
+                    var index = parseInt(Math.random() * list.length);
+                    //obj 随机出来的 题目
+                    var obj = list[index];
+                    $(".title").text(obj.title);
+                    result.text(obj.answer);
+                });
+
+        });
+    </script>
+</body>
+
+</html>

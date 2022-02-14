@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中秋猜灯谜</title>
+    <link rel="stylesheet" href="index.css?v=3">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="stage1" style="display:none;">
+        <div class="title">
+            <span>参</span><span>与</span><span>方</span><span>式</span>
+        </div>
+        <div class="content">
+            去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要，去找崔老板要
+        </div>
+        <div class="title">
+            <span>游</span><span>戏</span><span>奖</span><span>品</span>
+        </div>
+        <div class="content">
+            奖励牛奶，去找崔老板要。。。
+        </div>
+        <div class="title">
+            <span>获</span><span>奖</span><span>规</span><span>则</span>
+        </div>
+        <div class="content">
+            游戏计时，在指定日期内，完成6题用时最短的前100名，可以获得奖品。排名不断刷新。
+        </div>
+        <div class="title">
+            <span>领</span><span>奖</span><span>方</span><span>式</span>
+        </div>
+        <div class="content">
+            我们将通过短信的形式，通知中奖粉丝到线下活动现场领奖。
+        </div>
+        <img class="backbutton" src="./imgs/stage1btn.png"/>
+    </div>
+    <div class="stage2">
+        <img class="button1" src="imgs/stage2btn1.png"/>
+        <img class="button2" src="imgs/stage2btn2.png"/>
+        <img class="button3" src="imgs/stage2btn3.png"/>
+    </div>
+    <div class="stage3" style="display:none;">
+        <div class="floatBox">
+            <div class="toptitle toptitle1">
+                <span>第</span>
+                <span class="indexnumber">一</span>
+                <span class="indexnumber2" style="display:none;"></span>
+                <span>题</span>
+            </div>
+            <div class="toptitle toptitle2" style="display:none;">
+                <span>你</span>
+                <span>的</span>
+                <span>成</span>
+                <span>绩</span>
+            </div>
+            <img class="floatBoxBg" src="imgs/stage3bg2.png"/>
+            <h3 class="showTime showelem showelem1"></h3>
+            <h4 class="gameask showelem showelem1"></h4>
+            <p class="gametip showelem showelem1"></p>
+            <div class="gameansbox showelem showelem1"><input class="gameans" type="text" placeholder="请写下你的答案"></div>
+            <img class="nextbtn showelem nextbtn1 showelem1" src="imgs/stage3next.png"/>
+            <img class="showelem showelem2 wricon nextbtn2" style="display:none;" src="imgs/righticon.png"/>
+            <h4 class="right showelem showelem2" style="display:none;">答案正确</h4>
+            <img class="nextbtn nextbtn2 showelem showelem2" style="display:none;" src="imgs/stage3next.png"/>
+            <img class="showelem showelem3 wricon nextbtn2" style="display:none;" src="imgs/wrongicon.png"/>
+            <h4 class="wrong showelem3 showelem" style="display:none;">答案错误</h4>
+            <img class="nextbtn nextbtn3 showelem3 showelem" style="display:none;" src="imgs/stage3next.png"/>
+            <h4 class="gongxi showelem showelem4" style="display:none;">恭喜你</h4>
+            <div class="showelem showelem4 result1" style="display:none;">答对<span class="">00</span>题</div>
+            <div class="showelem showelem4 result2" style="display:none;">耗时<span class="">00</span>秒</div>
+            <img class="showelem showelem4 resetbtn" style="display:none;" src="imgs/reseticon.png"/>
+            <img class="showelem showelem4 rankbtn" style="display:none;" src="imgs/rankbtn.png"/>
+        </div>
+    </div>
+    <div class="stage4" style="display:none;">
+        <div class="rankbox">
+            <div class="toptitle">
+                <span>排</span>
+                <span>行</span>
+                <span>榜</span>
+            </div>
+            <img class="closerank" src="imgs/closerank.png"/>
+            <div class="ranklist">
+                <table>
+                    <tr>
+                        <th>排名</th>
+                        <th>昵称</th>
+                        <th>答对</th>
+                        <th>用时</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="imgs/clock.png"/>在山南</td>
+                        <td>10题</td>
+                        <td>120秒</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.callback = function(data){
+            console.log(data)
+            //alert('游戏结束用时：'+data.usetime+'答对'+data.rightcount+'题')
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

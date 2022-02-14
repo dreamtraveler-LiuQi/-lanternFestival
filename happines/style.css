@@ -1,0 +1,173 @@
+@font-face {
+    font-family: hualihushao;
+    src: url("image/hualihushao.ttf");
+}
+html {
+    font-family: hualihushao;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,body {
+    height: 100%;
+}
+
+.up {
+    text-align: center;
+    z-index: 999;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    display: block;
+    width: 50px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    animation: bounce 1s infinite;
+    text-shadow: 3px 3px 10px rgba(248, 255, 0, 0.8);
+}
+.swiper-container {
+    height: 100%;
+}
+.page {
+    background:radial-gradient(red 10%, #be1800 30%, #8b0401 60%);
+}
+.page:first-of-type {
+    background: #000000;
+}
+.page {
+    position: relative;
+}
+.page4 {
+    width: 300px;
+    position: absolute;
+    margin-left: -150px;
+    left: 50%;
+}
+
+.yan {
+    top: 150px;
+}
+.tangyuan {
+    bottom: 10px;
+}
+
+.text {
+    position: absolute;
+    color: rgba(255,255,255,0.6);
+    font-size: 3rem;
+    text-shadow: 5px 5px 20px rgba(248, 255, 0, 0.6);
+}
+
+.yuan {
+    left: 5%;
+    top:15%;
+}
+
+.xiao  {
+    left: 35%;
+    top:10%;
+}
+
+.kuai  {
+    right: 35%;
+    top:10%;
+}
+
+.le  {
+    right: 5%;
+    top:15%;
+}
+
+.yanhua {
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top:100px;
+}
+
+.yanhuashiti {
+    display: block;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    bottom:140px;
+    z-index: 999;
+    transform: rotate(100deg);
+}
+
+.huomiao {
+    display: block;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom:0;
+}
+.text_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.dengmi_text {
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    text-align: center;
+}
+.yao {
+    top: 5%;
+}
+.yi {
+    top: 20%;
+}
+.yao2 {
+    top: 35%;
+}
+
+.cai {
+    top: 50%;
+}
+
+.deng {
+    top: 65%;
+}
+
+.mi {
+    top: 80%;
+}
+
+.dengmi_title {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 5px 5px 20px rgba(248, 255, 0, 0.6);
+    padding-top: 3rem;
+    animation: shake 1s infinite;
+}
+
+.mi_mian {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(242, 255, 10, 0.2);
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 7rem;
+    box-shadow: 0 0 20px rgba(242, 255, 10, 0.4);
+    border-radius: 10px;
+}
+.title {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+.result {
+    text-align: center;
+    display: none;
+}

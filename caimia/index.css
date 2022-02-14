@@ -1,0 +1,69 @@
+*{margin:0;padding:0;border:0;}
+a{color:inherit;text-decoration: none;}
+
+
+/*游戏规则*/
+.stage1{position:fixed;z-index:2;top:0;left:0;right:0;bottom:0;padding:5vw;box-sizing: border-box;background-color:#c92201;background-image: url(imgs/stage1bg.png);background-size: 100%;background-position: bottom;background-repeat: no-repeat;}
+.stage1 .title{padding:4.5vw 0 2vw;}
+.stage1 .title span{display:inline-block;margin:0 .5vw;font-size:7vw;width:11vw;height:11vw;font-family:"microsoft yahei";background-color:#293858;color:#ded2b1;text-align:center;line-height: 8.5vw;border-radius:50%;border:1.2vw solid #ded2b1;box-sizing: border-box;box-shadow:0 0 0 .5vw #293858;}
+.stage1 .content{color:#ded2b1;font-size: 4vw;}
+.stage1 .backbutton{display:block;width:40vw;margin:6vw auto;}
+
+/*开始游戏*/
+.stage2{width:100vw;height:100vh;overflow:hidden;background-color:#c92201;background-image:url(imgs/stage2bg2.png),url(imgs/stage2bg1.png);background-size: 100%,100%;background-repeat: no-repeat;background-position: bottom,top;}
+.stage2 .button1{width:60vw;display:block;margin:110vw auto 3vw;}
+.stage2 .button2{width:40vw;display:block;margin:auto;margin-left:5vw;float:left;}
+.stage2 .button3{width:40vw;display:block;margin:auto;margin-right:5vw;float:right;}
+
+/*游戏流程*/
+.stage3{width:100vw;height:100vh;overflow: hidden;background-color:#4a382d;background-image: url(imgs/stage3bg1.png);background-size: 100%;background-repeat: no-repeat;}
+.stage3 .floatBox{position: absolute;z-index: 2;width:90vw;left:5vw;top:16vw;}
+.stage3 .floatBoxBg{width:90vw;}
+.stage3 .toptitle{position: absolute;z-index: 20;width:90vw;top:-9vw;left:0vw;text-align: center;}
+.stage3 .toptitle span{display:inline-block;margin:0 1.5vw;font-size:10vw;width:18vw;height:18vw;font-family:"microsoft yahei";background-color:#293858;color:#ded2b1;text-align:center;line-height: 12vw;border-radius:50%;border:2vw solid #ded2b1;box-sizing: border-box;box-shadow:0 0 0 1.5vw #293858;}
+.stage3 .showTime{position: absolute;color:#ffd294;text-align: center;width:30vw;top:30vw;left:30vw;text-indent:4vw;font-size: 9vw;background-color:#650100;border-radius:4vw;}
+.stage3 .showTime::before{content:'';position:absolute;top:0;left:-6vw;width:11vw;height:12vw;background-image: url(imgs/clock.png);z-index: 2;background-size: 100%;}
+.stage3 .gameask{position: absolute;top:45vw;width:100%;font-size:8vw;color:#650100;text-align: center;font-family: "microsoft yahei";}
+.stage3 .gametip{position: absolute;top:55vw;width:100%;text-align: center;color:#650100;font-size: 5vw;line-height: 2;font-family: "microsoft yahei";}
+.stage3 .gameansbox{position: absolute;display:block;top:70vw;left:20vw;width:50vw;height:10vw;color:#650100;border:2px solid #650100;}
+.stage3 .gameans{width:100%;height:10vw;background-color:#ffd294;text-align: center;line-height: 10vw;}
+.stage3 .gameans::-webkit-input-placeholder{color:#650100;font-family: "microsoft yahei";font-size: 5vw;}
+.stage3 .gameansbox:before{content:'{';position: absolute;top:-2vw;left:-4vw;font-size: 10vw;font-weight: bold;}
+.stage3 .gameansbox:after{content:'}';position: absolute;top:-2vw;right:-4vw;font-size: 10vw;font-weight: bold;}
+.stage3 .nextbtn{display:block;position: absolute;left:20vw;bottom:-5vw;width:50vw;z-index: 10;}
+.stage3 .resetbtn{width:50vw;position: absolute;bottom:15vw;left:20vw;}
+.stage3 .wrong,.stage3 .right{position: absolute;width:100%;text-align: center;top:62vw;color:#ffd294;font-size: 12vw;font-family: "microsoft yahei";}
+.stage3 .wricon{position: absolute;width:30vw;top:33vw;left:30vw;}
+.stage3 .gongxi{position: absolute;left:0;top:35vw;width:100%;font-size:10vw;text-align: center;color:#650100;font-family: "microsoft yahei";font-weight: bold;}
+.stage3 .result1{position: absolute;left:0;top:55vw;width:100%;font-size:9vw;text-align: center;color:#650100;font-family: "microsoft yahei";font-weight: bold;}
+.stage3 .result2{position: absolute;left:0;top:67vw;width:100%;font-size:9vw;text-align: center;color:#650100;font-family: "microsoft yahei";font-weight: bold;}
+.stage3 .result1 span,.stage3 .result2 span{display:inline-block;width:auto;height:10vw;line-height:10vw;border:2px solid #650100;padding:0 .2em;margin:0 .2em;text-align:center;vertical-align: bottom;background-color:#ffd294;}
+.stage3 .rankbtn{display:block;position: absolute;left:20vw;bottom:-5vw;width:50vw;z-index: 10;}
+
+/*排行榜*/
+.stage4{position: fixed;top:0;right:0;bottom:0;left:0;z-index: 10;background-image: url(imgs/stage3bg1.png);background-size: 100%;background-repeat: no-repeat;background-color:#4a382d;}
+.stage4 .rankbox{position: absolute;width:86vw;height:80vh;top:10vh;left:7vw;box-sizing: border-box;border:1vw solid #650100;border-bottom-width:5vw;border-radius: 5vw;background-color:rgb(20,173,167);background-image: url(imgs/stage1bg.png);background-size: 100%;background-repeat: no-repeat;background-position: bottom;}
+.stage4 .toptitle{position: absolute;z-index: 20;width:84vw;top:-9vw;left:0;text-align: center;}
+.stage4 .toptitle span{display:inline-block;margin:0 1.5vw;font-size:10vw;width:18vw;height:18vw;font-family:"microsoft yahei";background-color:#293858;color:#ded2b1;text-align:center;line-height: 12vw;border-radius:50%;border:2vw solid #ded2b1;box-sizing: border-box;box-shadow:0 0 0 1.5vw #293858;}
+.stage4 .ranklist{position: absolute;width:78vw;height:50vh;overflow:scroll;top:15vw;left:3vw;}
+.stage4 .ranklist table{width:100%;font-family: "microsoft yahei";}
+.stage4 .ranklist table th{color:#650100;font-size: 6vw;line-height: 1.8;font-weight: bold;}
+.stage4 .ranklist table td{text-align: center;color:#650100;font-size: 5vw}
+.stage4 .ranklist table img{width:5vw;vertical-align: bottom;margin-right:.4em;}
+.stage4 .closerank{display:block;position: absolute;left:24vw;bottom:-10vw;width:40vw;z-index: 10;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
